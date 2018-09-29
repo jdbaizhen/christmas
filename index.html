@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merry Chistmas</title>
+    <link rel="stylesheet" href="./static/css/common.css">
+    <link rel="stylesheet" href="./static/css/pageA.css">
+    <link rel="stylesheet" href="./static/css/pageB.css">
+    <link rel="stylesheet" href="./static/css/pageC.css">
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.transit/0.9.12/jquery.transit.js"></script>
+    <script src="./static/js/deferred.js"></script>
+    <script src="./static/js/observer.js"></script>
+    <script src="./static/js/christmas.js"></script>
+    <script src="./static/js/carousel.js"></script>
+    <script src="./static/js/pageA.js"></script>
+    <script src="./static/js/pageB.js"></script>
+    <script src="./static/js/pageC.js"></script>
+</head>
+<body>
+    <section class="container">
+        <section class="page-a bg-adaptive">
+            <figure class="moon"></figure>
+            <figure class="tree"></figure>
+            <figure class="cloudy"></figure>
+            <div class="chs-boy chs-boy-deer"></div>
+            <div class="window wood">
+                <div class="window-bg"></div>
+                <div class="window-content">
+                    <div class="window-left"></div>
+                    <div class="window-right"></div>
+                </div>
+            </div>
+        </section>
+        <section class="page-b bg-adaptive">
+            <!-- 猫 -->
+            <figure class="cat"></figure>
+            <!-- 小女孩 -->
+            <figure class="girl"></figure>
+            <!-- 圣诞男孩 -->
+            <figure class="christmas-boy-head"></figure>
+            <figure class="christmas-boy boy-walk"> </figure>
+            <!--旋转木马-->
+            <div id="carousel">
+                <figure id="spinner"></figure>
+            </div>
+        </section>
+        <section class="page-c bg-adaptive">
+            <!-- 窗户关闭 -->
+            <div class="window wood">
+                <div class="window-content" data-attr="red">
+                    <div class="window-scene-bg"></div>
+                    <div class="window-close-bg"></div>
+                    <div class="window-left hover"></div>
+                    <div class="window-right hover"></div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <button id="btn">切换场景</button>
+</body>
+<script type="text/javascript">
+    var doc = document;
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if(!clientWidth) return;
+            docEl.style.fontSize = 20*(clientWidth/320) + 'px';
+            //原始比例
+            var proportion = 1080 / 1920;
+            document.body.style.height = clientWidth * proportion + "px";
+        };
+    window.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+</script>
+</html>

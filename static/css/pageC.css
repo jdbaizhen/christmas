@@ -1,0 +1,46 @@
+.window {
+    width: 2.6rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 7.9rem;
+    top: 5.5rem;
+    cursor: pointer;
+    perspective: 500px;
+    -webkit-perspective: 500px;
+}
+
+.window-content {
+    width: 91%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/*窗户背景*/
+.window-bg {
+    width: 86%;
+    height: 92%;
+    position: absolute;
+    left: 50%;
+    margin-left: -43%;
+    bottom: 0;
+    background: url('../image/page3/win-bg.png');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.window-left.hover{
+    -webkit-transform: scale(0.95) rotateY(60deg) rotateZ(2deg);
+    margin-top: 0.1rem;
+    margin-right: -0.25rem;
+}
+
+.window-right.hover{
+    -webkit-transform: scale(0.95) rotateY(-60deg) rotateZ(-2deg);
+    margin-top: 0.1rem;
+    margin-right: -0.25rem;
+}
